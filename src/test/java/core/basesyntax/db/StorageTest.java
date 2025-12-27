@@ -1,9 +1,8 @@
-package core.basesyntax;
+package core.basesyntax.db;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotSame;
 
-import core.basesyntax.db.Storage;
 import java.util.Map;
 import org.junit.jupiter.api.Test;
 

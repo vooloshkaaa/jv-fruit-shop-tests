@@ -1,18 +1,25 @@
-package core.basesyntax;
+package core.basesyntax.strategy;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import core.basesyntax.model.FruitTransaction;
-import core.basesyntax.strategy.SupplyOperation;
 import java.util.HashMap;
 import java.util.Map;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class SupplyOperationTest {
+    private SupplyOperation supplyOperation;
+    private Map<String, Integer> inventory;
+
+    @BeforeEach
+    void setUp() {
+        supplyOperation = new SupplyOperation();
+        inventory = new HashMap<>();
+    }
+
     @Test
     void apply_purchase_ok() {
-        SupplyOperation supplyOperation = new SupplyOperation();
-        Map<String, Integer> inventory = new HashMap<>();
         inventory.put("banana", 20);
 
         FruitTransaction tr = new FruitTransaction(
